@@ -1,0 +1,128 @@
+/*
+  UTILS
+*/
+@import '../../assets/custom/styles/utils/functions';
+@import '../../assets/custom/styles/utils/mixins';
+@import '../../assets/custom/styles/utils/variables';
+
+.horizontal-gallery-wrapper {
+	@media #{$ipad-and-down} {
+		padding: $content-padding-mobile;
+		text-align: center;
+	}
+	.gallery-filter {
+		margin-top: 100px;
+		@media #{$ipad-and-down} {
+			display: flex;
+			flex-direction: column;
+			flex-wrap: nowrap;
+			margin-top: $content-padding-top-mobile/2;
+		}
+		.gallery-title {
+			text-transform: uppercase;
+			margin-right: 20px;
+			text-decoration: none;
+			&.gal-active {
+				text-decoration: underline;
+			}
+		}
+	}
+	.gallery-list{
+		display: flex;
+		li{
+			padding: 0 11px;
+			cursor:pointer;
+			&.gal-active {
+				text-decoration: underline;
+			}
+			&:first-of-type{
+				padding-left:0;
+			}
+		}
+	}
+	.galleries-list {
+		margin-top:67px;
+		overflow:hidden;
+		.slideshow-container {
+			display: none;
+			max-width: 850px;
+			margin: auto;
+			position: relative;
+			margin-bottom: 100px;
+			&:first-of-type{
+				display: block;
+			}
+			.flex-viewport {
+				overflow: visible !important;
+				.slides {
+					.overlay {
+						position: absolute;
+						top: 0;
+						bottom: 0;
+						right: 20px;
+						left: 20px;
+						opacity: 1;
+						-webkit-transition: opacity 0.4s linear;
+						-moz-transition: opacity 0.4s linear;
+						-ms-transition: opacity 0.4s linear;
+						-o-transition: opacity 0.4s linear;
+						transition: opacity 0.4s linear;
+					}
+					li {
+						position: relative;
+						img {
+							padding-left: 20px;
+							padding-right: 20px;
+						}
+					}
+					.flex-active-slide {
+						.overlay {
+							opacity: 0;
+							-webkit-transition: opacity 0.4s linear;
+							-moz-transition: opacity 0.4s linear;
+							-ms-transition: opacity 0.4s linear;
+							-o-transition: opacity 0.4s linear;
+							transition: opacity 0.4s linear;
+						}
+					}
+				}
+			}
+		}
+		.custom-navigation {
+			position: static;
+			.flex-prev,
+			.flex-next {
+				display: block;
+				position: absolute;
+				top: 50%;
+				-webkit-transform: translate(-50%);
+				-moz-transform: translate(-50%);
+				-ms-transform: translate(-50%);
+				-o-transform: translate(-50%);
+				transform: translate(-50%);
+				height:45px;
+				width:45px;
+				background: url(../../assets/images/gallery-arrow-light.png) center center no-repeat;
+				-webkit-background-size: cover;
+				background-size: cover;
+			}
+			.flex-prev{
+				left:-55px;
+				// display: none;
+				@media #{$large-and-down} {
+					left:-175px;
+					display: block;
+				}
+			}
+			.flex-next{
+				transform:rotate(180deg);
+				right: -75px;
+				// display: none;
+				@media #{$large-and-down} {
+					right: -175px;
+					display: block;
+				}
+			}
+		}
+	}
+}

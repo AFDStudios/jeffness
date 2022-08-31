@@ -1,0 +1,20 @@
+/******************************************************************
+Theme Name: Jeffness 
+Description: The Jeffness.net Theme
+Author: Jeff Hebert
+Author URI: https://jeffness.net
+Text Domain: jeffness
+Version: 2.0
+Tags: fluid-layout, responsive-layout, accessibility-ready, translation-ready, microformats, rtl-language-support
+
+*/
+
+/*
+Theme Check (http://wordpress.org/plugins/theme-check/)
+requires these classes in the CSS even
+though they are in the real stylesheet.
+*/
+
+.sticky {}          /* DO NOT EDIT THIS */
+.gallery-caption {} /* THESE ARE USELESS */
+.bypostauthor {}    /* THEY ARE ONLY TO KEEP THEME CHECK HAPPY */

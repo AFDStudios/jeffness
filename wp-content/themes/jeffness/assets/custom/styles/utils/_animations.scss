@@ -1,0 +1,34 @@
+/**
+  UTILS
+*/
+@import 'functions';
+@import 'mixins';
+@import 'variables';
+
+.fade-in {
+	opacity:0;
+	@media #{$ipad-and-down} {
+		opacity:1;
+	}
+}
+
+.slide-up {
+	opacity:0;
+	position:relative;
+	top:200px;
+	@media #{$ipad-and-down} {
+		opacity:1;
+		top:0;
+	}
+}
+
+.slide-right {
+	position: relative;
+	left: -50vw;
+	@media #{$ipad-and-down} {
+		width: auto;
+	}
+	@media #{$small-and-down} {
+		left: unset;
+	}
+}

@@ -1,0 +1,27 @@
+// -----------------------------------------------------------------------------
+// This file contains all overrides for the Robo Gallery plugin.
+// -----------------------------------------------------------------------------
+
+.rbs_gallery_button {
+	margin-bottom: 70px;
+	.button {
+		text-transform: lowercase;
+		letter-spacing: 2.7px !important;
+		font-family: inherit !important;
+		box-shadow: none !important;
+		border-width: 1px !important;
+		text-shadow: none !important;
+		width: 286px !important;
+		height: 100px !important;
+		font-size: 20px !important;
+		padding: 15px 38px !important;
+		text-align: center !important;
+		display: inline-flex !important;
+		flex-direction: row;
+		align-items: center;
+		justify-content: center;
+		&:nth-child(n+2) {
+			margin-left: 65px;
+		}
+	}
+}

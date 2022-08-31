@@ -1,0 +1,120 @@
+/**
+  UTILS
+*/
+@import '../../assets/custom/styles/utils/functions';
+@import '../../assets/custom/styles/utils/mixins';
+@import '../../assets/custom/styles/utils/variables';
+
+.testimonial-wrapper {
+	position: relative;
+	width: 100%;
+	max-width: 847px;
+	margin: 0 auto;
+	word-break: break-all;
+	background-size: cover;
+	background-position: center center;
+	@media #{$medium-and-down} {
+		padding: 50px 0 85px 0;
+		height: auto;
+	}
+	.testimonial-content-wrapper {
+		position: relative;
+		z-index: 2;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		padding: 0;
+		width: 100%;
+		@media #{$medium-and-down} {
+			flex-direction: column;
+			padding: 25px 25px 60px 25px;
+		}
+		@media #{$small-and-down} {
+			flex-direction: column;
+			padding: 0;
+		}
+		.testimonial-headline {
+			flex: 1;
+			margin-bottom: 80px;
+			@media #{$medium-and-down} {
+				padding: 0;
+				margin: 0;
+				line-height: 1.25;
+				margin-bottom: 50px;
+			}
+		}
+		.flexslider { // .testimonial-right
+			border-radius: 0;
+			background: transparent;
+			border: none;
+			margin: 0;
+			width: 100%;
+			max-width: $content-width;
+			@media #{$medium-and-down} {
+				padding: 10px;
+				width: 100%;
+				margin: 0;
+			}
+			.slides {
+				padding-bottom: 30px;
+				li.testimonial-single-wrapper {
+					.testimonial-single-client {
+						text-align: center;
+						margin-bottom: 50px;
+						word-break: break-word;
+					}
+					.testimonial-single-top { // this is actually the smaller line on the bottom. Don't ask, legacy code.
+						position: relative;
+						display: flex;
+						flex-direction: row;
+						flex-wrap: nowrap;
+						justify-content: center;
+						align-items: center;
+						text-align: center;
+						padding-top: 27px;
+						margin-top: 27px;
+						@media #{$medium-and-down} {
+							text-align: center;
+							padding: 10px;
+						}
+					}
+					.testimonial-single-middle {  // And this is actually the bottom line.
+						margin: 10px 0;
+						text-align: center;
+						word-break: normal;
+						@media #{$medium-and-down} {
+							text-align: center;
+							padding: 10px;
+							font-size: 28px;
+						}
+						@media #{$small-and-down} {
+							text-align: center;
+							padding: 10px;
+							font-size: 18px;
+						}
+					}
+
+				}
+			}
+			.flex-control-nav {
+				margin: 0;
+				right: 0;
+				left: 0;
+				li {
+					margin: 0 16px 0 0;
+					a {
+						border: none;
+						background: #d1d1d1;
+						width: 43px;
+						height: 2px;
+						&.flex-active {
+							
+						}
+					}
+				}
+			}
+		}
+		
+	}
+}

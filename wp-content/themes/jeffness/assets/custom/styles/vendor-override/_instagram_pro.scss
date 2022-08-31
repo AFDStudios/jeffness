@@ -1,0 +1,48 @@
+// -----------------------------------------------------------------------------
+// This file contains all overrides for the Instagram Pro plugin.
+// -----------------------------------------------------------------------------
+
+// Main container
+#sbi_images {
+	
+}
+
+// Overlay if you need it. The color is set in header.php from theme options to $navy.
+#sb_instagram .sbi_link {
+	// display: block !important; // This is for testing, so you can see the block all the time without having to hover. 
+}
+
+// Individual image blocks
+#sb_instagram #sbi_images.sbi_carousel .sbi_item {
+	
+}
+
+#sb_instagram {
+	// Wrapper container for the likes and comments counter.
+	.sbi_hover_bottom {
+		height: 0;
+		width: 100%;
+		position: absolute;
+		top: 35%;
+		pointer-events: none;
+		// Container for the likes and comments counter.
+		.sbi_meta {
+			opacity: 0.9;
+			width: 100%;
+			// Words in the likes and comments counter.
+			span {
+				font-size: 48px;
+			}
+			// Font awesome icons.
+			i, svg {
+				font-size: 33px;
+				margin-right: 20px !important;
+			}
+		}
+	}
+}
+
+// The likes wrapper.
+.sbi_likes {
+	padding-right: 45px;
+}

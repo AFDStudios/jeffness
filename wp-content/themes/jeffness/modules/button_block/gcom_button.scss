@@ -1,0 +1,43 @@
+/*------------------------------------*\
+	COMPONENT SHORTCODE
+\*------------------------------------*/
+
+.gcom-cta-wrapper {
+	&.gcom-cta-right {
+		text-align: right;
+	}
+	&.gcom-cta-center {
+		text-align: center;
+	}
+	&.gcom-cta-left {
+		text-align: left;
+	}
+}
+.btn, .rbs_gallery_button .button {
+	display: inline-block;
+	width: auto;
+	height: auto;
+	padding: 19px 36px;
+	// min-width: 210px;
+	margin: 10px 0;
+	text-decoration: none;
+	border-radius: 0;
+	text-shadow: none;
+	box-shadow: none;
+	cursor: pointer;
+	transition: all 0.2s;
+	border:2px solid;
+	text-align:center;
+	text-transform:uppercase;
+	&:hover {
+		transition: all 0.2s;
+	}
+	&.transparent{
+		background:transparent;
+	}
+	a{
+		text-transform:uppercase;
+		display:block;
+		width:100%;
+	}
+}

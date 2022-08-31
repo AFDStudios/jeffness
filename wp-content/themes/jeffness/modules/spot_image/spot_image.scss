@@ -1,0 +1,47 @@
+/**
+  UTILS
+*/
+@import '../../assets/custom/styles/utils/functions';
+@import '../../assets/custom/styles/utils/mixins';
+@import '../../assets/custom/styles/utils/variables';
+
+.spot-image-wrapper {
+	position: relative;
+	visibility: hidden;
+	&.overlap {
+		visibility: visible;
+	}
+	&.horizontal-location {
+		&-left {
+			img.gcom-spot-image {
+				left: 0;
+			}
+		}
+		&-middle {
+			
+		}
+		&-right {
+			img.gcom-spot-image {
+				right: 0;
+			}
+		}
+	}
+	&.vertical-location {
+		&-top {
+			img.gcom-spot-image {
+				top: 0;
+			}
+		}
+		&-middle {
+			
+		}
+		&-bottom {
+			img.gcom-spot-image {
+				bottom: 0;
+			}
+		}
+	}
+	img.gcom-spot-image {
+		position: absolute;
+	}
+}

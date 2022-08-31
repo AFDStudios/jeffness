@@ -1,0 +1,128 @@
+.header-booking-bar {
+	background: #473A31;
+	padding: 30px;
+	box-sizing:border-box;
+	max-height: 100px;
+	.outer-container {
+		.booking {
+			.label{
+				font-size:23px;
+				@media #{$large-and-up} {
+					font-size:29px;
+				}
+			}
+			.label,
+			.input{
+				margin: 0 10px;
+				@media #{$large-and-up} {
+					margin: 0 15px;
+				}
+			}
+			display: flex;
+			justify-content:center;
+			align-items: center;
+			width:100%;
+			.input{
+				position: relative;
+				.icon-calendar{
+					position: absolute;
+					right: 0;
+					top: 0;
+					cursor: pointer;
+					img{
+						padding: 7px 11px;
+						cursor: pointer;
+					}
+				}
+			}
+			input[type="text"],
+			input[type="number"]{
+				-webkit-box-sizing: border-box;
+				-moz-box-sizing: border-box;
+				box-sizing: border-box;
+				padding: 10px 18px;
+				height:42px;
+				width:185px;
+				border:0;
+				// font-family:inherit;
+				outline:none;
+				font-size:inherit;
+			}
+
+			.quantity {
+				position: relative;
+				input{
+					width:150px;
+				}
+			}
+
+			input[type=number]::-webkit-inner-spin-button,
+			input[type=number]::-webkit-outer-spin-button
+			{
+				-webkit-appearance: none;
+				margin: 0;
+			}
+
+			input[type=number]
+			{
+				-moz-appearance: textfield;
+			}
+
+			.quantity input:focus {
+				outline: 0;
+			}
+
+			.quantity-nav {
+				position: absolute;
+				top:0;
+				right:0;
+				height: 42px;
+			}
+
+			.quantity-button {
+				position: relative;
+				cursor: pointer;
+				border-left: 1px solid #eee;
+				width: 40px;
+				text-align: center;
+				color: #fff;
+				font-size: 13px;
+				font-family: "Trebuchet MS", Helvetica, sans-serif !important;
+				line-height: 1.7;
+				-webkit-transform: translateX(-100%);
+				transform: translateX(-100%);
+				-webkit-user-select: none;
+				-moz-user-select: none;
+				-ms-user-select: none;
+				-o-user-select: none;
+				user-select: none;
+			}
+			.quantity-up, .quantity-down{
+				img{
+					max-width:18px;
+					display:inline-block;
+					margin:0;
+				}
+			}
+			.quantity-button.quantity-up {
+				position: absolute;
+				height: 50%;
+				top: 0;
+				img{
+					transform:rotate(180deg);
+				}
+			}
+
+			.quantity-button.quantity-down {
+				position: absolute;
+				bottom: 0;
+				height: 50%;
+			}
+			.btn.btn-primary {
+				margin: 0;
+				padding: 11px 19px;
+				border: none;
+			}
+		}
+	}
+}

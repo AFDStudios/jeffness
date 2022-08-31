@@ -1,0 +1,52 @@
+// -----------------------------------------------------------------------------
+// This file contains all overrides for the TablePress plugin.
+// -----------------------------------------------------------------------------
+
+.gcom-awards-table {
+	thead {
+		tr {
+			th {
+				background-color: transparent;
+				border-bottom: none;
+				@media #{$small-and-down}{
+					font-size: 12px;
+					font-weight: normal;
+					letter-spacing: normal;
+				}
+				&:after {
+					color: #d1d1d1;
+				}
+				&.sorting_asc, 
+				&.sorting_desc,
+				&.sorting:hover {
+					background-color: #f3f3f3;
+				}
+			}
+		}
+	}
+	tbody {
+		&:before {
+			content:"@";
+			display:block;
+			line-height:65px;
+			text-indent:-99999px;
+		}
+		tr {
+			td {
+				vertical-align: middle;
+				@media #{$small-and-down}{
+					font-size: 12px;
+				}
+				&.column-1 {
+					padding: 23px 50px 23px 10px;
+					@media #{$small-and-down}{
+						padding: 7px 7px 7px 0;
+					}
+				}
+				img {
+
+				}
+			}
+		}
+	}
+}

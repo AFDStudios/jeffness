@@ -1,0 +1,71 @@
+/**
+  UTILS
+*/
+@import '../../assets/custom/styles/utils/functions';
+@import '../../assets/custom/styles/utils/mixins';
+@import '../../assets/custom/styles/utils/variables';
+
+.gcom-faq-wrapper {
+	padding: 50px 0; 
+	@media #{$large-and-down} {
+		padding: $content-padding;
+		margin: $content-padding;
+	}
+	@media #{$small-and-down} {
+		padding: $content-padding-mobile;
+		margin: $content-padding-mobile;
+	}
+	article {
+		h2 {
+
+		}
+		.gcom-faq-single-wrapper {
+			border-bottom: 1px solid #acacac;
+			padding-bottom: 20px;
+			margin-bottom: 20px;
+		}
+		.gcom-faq-text-block {
+
+		}
+		.gcom-faq-question {
+			font-weight: bold;
+			.gcom-faq-toggle-open,
+			.gcom-faq-toggle-close {
+				display: none;
+				margin-right: 10px;
+				opacity: 0.75;
+			}
+		}
+		.gcom-faq-answer {
+			margin-left: 20px;
+			&.content-hidden {
+				display: none;
+			}
+		}
+		hr {
+			margin: 20px 0;
+		}
+	}
+	&.accordion-closed {
+		article {
+			.gcom-faq-question {
+				.gcom-faq-toggle-open {
+					display: inline-block;
+				}
+			}
+		}
+	}
+	&.accordion-open {
+		article {
+			.gcom-faq-question {
+				.gcom-faq-toggle-close {
+					display: inline-block;
+				}
+			}
+		}
+	}
+	&.accordion-open,
+	&.accordion-closed {
+		cursor: pointer;
+	}
+}

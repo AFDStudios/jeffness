@@ -1,0 +1,275 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the footer of the site/application.
+// -----------------------------------------------------------------------------
+
+footer{
+	// border: 1px solid red;
+	position: relative;
+	.footer-row-wrapper {
+		position: relative;
+		z-index: 2;
+		display: flex;
+		flex-direction: column;
+		flex-wrap: nowrap;
+		width: 100%;
+		&:first-child {
+			padding-top: 140px;
+		}
+		&:not(:last-of-type) {
+			padding-bottom: 70px;
+		}
+		.footer-row {
+			position: relative;
+			z-index: 2;
+			display: flex;
+			flex-direction: row;
+			flex-wrap: nowrap;
+			@media #{$ipad-and-down} {
+				flex-direction: column;
+			}
+			&.full-width {
+				width: 100%;
+			}
+			.footer-row-column {
+				flex: 1;
+				display: flex;
+				flex-direction: column;
+				flex-wrap: nowrap;
+				padding: 5px 0;
+				background-size: cover;
+				&:not(:last-child) {
+					
+				}
+				img {
+					max-width: 100%;
+					height: auto;
+				}
+				&.align-column-left {
+					align-items: flex-start;
+				}
+				&.align-column-right {
+					align-items: flex-end;
+					justify-content: center;
+				}
+				&.align-column-center {
+					align-items: center;
+					.footer-row-column-social-media {
+						align-items: center;
+					}
+					p, div, i, ol, ul {
+						text-align: center;
+					}
+				}
+				@media #{$small-and-down} {
+					padding: $content-padding-mobile;
+				}
+				.footer-row-column-social-media {
+					display: flex;
+					flex-direction: row;
+					flex-wrap: nowrap;
+					a {
+						opacity: 0.7;
+						transition: opacity 0.2s;
+						&:hover {
+							opacity: 1;
+							transition: opacity 0.2s;
+						}
+						i {
+							font-size: 34px;
+							margin: 0 10px;
+						}
+						img {
+							max-width: 40px;
+							max-height: 40px;
+							margin-right: 25px;
+						}
+					}
+				}
+				.footer-row-column-content {
+					a {
+						color: inherit;
+						text-decoration: none;
+						&:hover {
+							color: inherit;
+						}
+					}
+					p {
+						color: inherit;
+						font-family: inherit;
+					}
+				}
+				.footer-row-column-form {
+					position: relative;
+					width: 100%;
+					text-transform: uppercase;
+					@media #{$small-and-down} {
+						padding: 0 $content-padding-right-mobile 0 $content-padding-left-mobile;
+					}
+					.gform_wrapper{
+						form{
+							position: relative;
+							.gform_body{
+								ul {
+									list-style: none;
+									padding: 0;
+								}
+								.gfield{
+									padding: 0px !important;
+									margin: 0px !important;
+									border: none !important;
+								}
+								label{
+									display: none;
+								}
+								.ginput_container{
+									margin-bottom: 0;
+									input{
+										display: inline-block;
+										color: inherit;
+										opacity: 0.7;
+										border-bottom: 2px solid white;
+										background: transparent;
+										padding-bottom: 15px;
+										max-width: 80%;
+										&::placeholder{
+											color: white;
+										}
+									}
+								}
+							}
+							.gform_footer{
+								input[type="submit"] {
+									padding: 15px 90px;
+								}
+							}
+						}
+						&.gform_validation_error{
+							margin-top: calc(180px - 3vw);
+							position: relative;
+							form{
+								position: static;
+							}
+							.validation_error{
+								position: absolute;
+								top: calc(-170px + 3vw);
+							}
+							.validation_message{
+								position: absolute;
+							}
+						}
+					}
+					.widget{
+						width: 200px;
+						margin-top: 30px;
+						margin-left: calc(100% - 200px);
+						.awesome-weather-wrap{
+							.awesome-weather-current-temp{
+								font-size: 40px;
+								padding-top: 10px;
+								padding-bottom: 10px;
+							}
+						}
+					}
+				}
+				nav {
+					ul {
+						display: flex;
+						flex-wrap: wrap;
+						list-style: none;
+						align-items: center;
+						justify-content: center;
+						margin: 0;
+						padding: 0;
+						li {
+							&:before {
+								content: "|";
+								padding: 0 10px;
+								@media #{$medium-and-down} {
+									padding: 0 15px;
+									text-align: center;
+									display: none;
+								}
+							}
+							&:first-of-type::before {
+								content: "";
+							}
+							@media #{$medium-and-down} {
+								margin: 10px 0;
+							}
+							a {
+								color: inherit;
+								text-decoration: none;
+								opacity: 0.7;
+								transition: opacity 0.2s;
+								&:hover {
+									opacity: 1;
+									transition: opacity 0.2s;
+								}
+							}
+						}
+					}
+					&.align-footer-menu-horizontal {
+						flex-direction: row;
+						ul {
+							flex-direction: row;
+							justify-content: flex-start;
+							li {
+								display: inline-block;
+								&:before {
+									display: none;
+								}
+								&:not(:last-child):after {
+									content: "|";
+									margin: 0 5px;
+								}
+							}
+						}
+						@media #{$ipad-and-down} {
+							flex-direction: column;
+							ul {
+								flex-direction: column;
+							}
+						}
+					}
+					&.align-footer-menu-vertical {
+						ul {
+							flex-direction: column;
+							align-items: flex-start;
+							li {
+								&:before {
+									display: none;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		.footer-row-overlay {
+			position: absolute;
+			z-index: 1;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+		}
+	}
+	.footer-bg-wrapper {
+		position: absolute;
+		z-index: 1;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+		&.blur-image {
+			img {
+				@include better-blur(8);
+			}
+		}
+	}
+}

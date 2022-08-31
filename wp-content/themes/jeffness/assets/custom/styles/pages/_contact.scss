@@ -1,0 +1,30 @@
+// Exceptions for top two rows on contact page.
+
+body.page-id-4259 {
+	.wp-block-columns {
+		.wp-block-column {
+			p {
+				a {
+					text-decoration: none;
+					position: relative;
+					line-height: 1.2;
+				 	&:after {
+				 		content: '';
+				 		position: absolute;
+				 		right: 0;
+				 		bottom: -10px;
+				 		left: 0;
+				 	}
+				}
+			}
+		}
+	}
+
+	.footer-top-row-wrapper,
+	.footer-contact-row-wrapper {
+		display: none;
+	}
+	> .constrained-width > hr {
+		display: none;
+	}
+}

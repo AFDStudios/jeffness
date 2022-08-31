@@ -1,0 +1,70 @@
+/*------------------------------------*\
+	COMPONENT SHORTCODE
+\*------------------------------------*/
+
+.collapsible-body {
+	p {
+		padding: 1rem 2rem;
+	}
+}
+
+.expander {
+	$expander-arrow-width: 0.7em;
+	$expander-toggle-size: 1em;
+	$expander-toggle-arrow-size: $expander-toggle-size;
+	$expander-toggle-margin: 1em;
+
+	width: 100%;
+
+	.expander-trigger {
+		cursor: pointer;
+		font-size: 1.2em;
+		margin-bottom: $expander-toggle-size;
+		margin-top: $expander-toggle-size;
+		padding-bottom: $expander-toggle-size / 4;
+		padding-top: $expander-toggle-size / 4;
+		text-decoration: none;
+
+		&:before {
+			content: "\25BC";
+			font-size: $expander-arrow-width;
+			margin-right: 0.5em;
+			font-family: 'FontAwesome';
+		}
+	}
+
+	.expander-content p {
+		
+	}
+
+	.expander-hidden {
+		&:before {
+			content: "\25BA";
+			font-size: $expander-arrow-width;
+			font-family: 'FontAwesome';
+		}
+	}
+
+	.expander-content {
+		&.content-hidden {
+			display: none;
+		}
+	}
+}
+
+// TABBED CONTENT SHORTCODE STYLES
+
+.gcom-tab-button-wrapper { // wrapper for the buttons
+	.btn-tab { // individual button
+
+	}
+}
+
+.gcom-tab-content-wrapper { // wrapper for all the tabs
+	.gcom-tab { // div containing one tab's worth of content
+		display: none;
+		&.active-tab-content { //
+			display: block;
+		}
+	}
+}
