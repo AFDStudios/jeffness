@@ -40,6 +40,14 @@ h4 {
 	margin-bottom: 0;
 }
 
+hr.hr-gray {
+	border: 0;
+	height: 0;
+	border-top: 1px solid rgba(0, 0, 0, 0.1);
+	border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+	background: none;
+}
+
 main {
 	@media #{$small-and-down} {
 		padding-right: $content-padding-right-mobile;
@@ -134,7 +142,7 @@ main {
 
 .wp-block-spacer {
 	@media #{$ipad-and-down} {
-		max-height: $content-padding-top-mobile/2;
+		max-height: calc($content-padding-top-mobile/2);
 	}
 }
 

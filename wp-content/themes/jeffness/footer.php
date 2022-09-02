@@ -39,7 +39,7 @@ $social_media_accounts = get_field('social_media_account', 'option');
 												array(
 													'theme_location' => 'footer-menu',
 													'container' => false,
-													'menu_class' => 'fg-c2 menu',
+													'menu_class' => 'fg-black menu',
 													'items_wrap' => '<ul class="%2$s ' . get_field('footer_icon_colors', 'option') . '" id="menu-footer">%3$s</ul>'
 												)
 											);
@@ -74,8 +74,7 @@ $social_media_accounts = get_field('social_media_account', 'option');
 			$footer_bg_image = get_field('footer_bg_image', 'option');
 			if ( $footer_bg_image ) :
 				$size = THEME_NAME . '-footer-bg';
-				echo '<div class="footer-bg-wrapper'. (get_field('blur_footer_image', 'option')?' blur-image':'') .'">';
-					echo '<img src="' . $footer_bg_image['sizes'][$size] . '" alt="' . $footer_bg_image['url'] . '">';
+				echo '<div class="footer-bg-wrapper'. (get_field('blur_footer_image', 'option')?' blur-image':'') .'" style="background-image: url(' . $footer_bg_image['url'] . ');">';
 				echo '</div>';			
 			endif;
 			?>

@@ -497,7 +497,7 @@ body.single-post {
 // Shortcode styles
 // -----------------------------------------------------------------------------
 .single-blog-post-shortcode-outer-wrapper {
-	padding: $content-padding-top/4 0 $content-padding-bottom/4 0;
+	padding: calc($content-padding-top/4) 0 calc($content-padding-bottom/4) 0;
 	.single-blog-post-shortcode-inner-wrapper {
 		display: flex;
 		flex-wrap: nowrap;

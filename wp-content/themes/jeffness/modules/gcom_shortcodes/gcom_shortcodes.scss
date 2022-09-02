@@ -21,8 +21,8 @@
 		font-size: 1.2em;
 		margin-bottom: $expander-toggle-size;
 		margin-top: $expander-toggle-size;
-		padding-bottom: $expander-toggle-size / 4;
-		padding-top: $expander-toggle-size / 4;
+		padding-bottom: calc($expander-toggle-size / 4);
+		padding-top: calc($expander-toggle-size / 4);
 		text-decoration: none;
 
 		&:before {

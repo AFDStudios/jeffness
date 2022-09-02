@@ -911,5 +911,4 @@
 					</div><!-- /mobile-header-wrapper -->
 				</div><!-- /constrained-width -->
 			</div><!-- /header-wrapper -->
-			<?php echo booking_widget_layout(); ?>
 		</header>

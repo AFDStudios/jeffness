@@ -3,13 +3,13 @@
 //   CUSTOM IMAGE SIZES
 // =========================================
 // If you need to add custom image sizes for this module, do so here.
-add_image_size( THEME_NAME . '-home-top-slider', 1440, 900, true );
+add_image_size( THEME_NAME . '-home-top-slider', 1600, 770, true );
 add_image_size( THEME_NAME . '-home-top-slider-mobile', 500, 630, true );
 
 // Add image sizes to drop down list when adding an image in the CMS
 function home_top_slider_custom_image_sizes( $sizes ) {
     return array_merge( $sizes, array(
-        THEME_NAME . '-home-top-slider' => __('1440px by 900px (Home Top Slider)'),
+        THEME_NAME . '-home-top-slider' => __('1600px by 770px (Home Top Slider)'),
         THEME_NAME . '-home-top-slider-mobile' => __('500px by 630px (Home Top Slider: Mobile)'),
     ) );
 }
@@ -32,7 +32,7 @@ if( function_exists('acf_add_local_field_group') ):
 
 acf_add_local_field_group(array(
 	'key' => 'group_5e2f460d2f841',
-	'title' => 'GCommerce Home Top Slider',
+	'title' => 'GCommerce Header Block',
 	'fields' => array(
 		array(
 			'key' => 'field_5f64c3036ee69',
@@ -45,7 +45,7 @@ If this field is filled out, none of the static slides will be shown; the user w
 			'required' => 0,
 			'conditional_logic' => 0,
 			'wrapper' => array(
-				'width' => '33',
+				'width' => '25',
 				'class' => '',
 				'id' => '',
 			),
@@ -64,7 +64,7 @@ If this field is filled out, none of the static slides will be shown; the user w
 			'required' => 0,
 			'conditional_logic' => 0,
 			'wrapper' => array(
-				'width' => '33',
+				'width' => '25',
 				'class' => '',
 				'id' => '',
 			),
@@ -88,7 +88,7 @@ If this field is filled out, none of the static slides will be shown; the user w
 			'required' => 0,
 			'conditional_logic' => 0,
 			'wrapper' => array(
-				'width' => '33',
+				'width' => '25',
 				'class' => '',
 				'id' => '',
 			),
@@ -104,12 +104,63 @@ If this field is filled out, none of the static slides will be shown; the user w
 			'mime_types' => '',
 		),
 		array(
+			'key' => 'field_5e2f4612b17c1',
+			'label' => 'Overlay Color',
+			'name' => 'overlay',
+			'type' => 'radio',
+			'instructions' => '',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array(
+				'width' => '25',
+				'class' => '',
+				'id' => '',
+			),
+			'choices' => array(
+				'bg-c1-opacity' => 'Transparent Theme Color 1',
+				'bg-c2-opacity' => 'Transparent Theme Color 2',
+				'bg-white-opacity' => 'Transparent White Theme Color',
+				'bg-black-opacity' => 'Transparent Black Theme Color',
+				'none' => 'No overlay',
+			),
+			'allow_null' => 0,
+			'other_choice' => 0,
+			'default_value' => 'none',
+			'layout' => 'vertical',
+			'return_format' => 'value',
+			'save_other_choice' => 0,
+		),
+		array(
+			'key' => 'field_6f11f06dfe957',
+			'label' => 'Bottom Border',
+			'name' => 'bottom_border',
+			'type' => 'image',
+			'instructions' => '',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array(
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'return_format' => 'id',
+			'preview_size' => 'medium',
+			'library' => 'all',
+			'min_width' => '',
+			'min_height' => '',
+			'min_size' => '',
+			'max_width' => '',
+			'max_height' => '',
+			'max_size' => '',
+			'mime_types' => '',
+		),
+		array(
 			'key' => 'field_5e2f4612018b0',
-			'label' => 'Home Top Slides',
+			'label' => 'Slides',
 			'name' => 'home_top_slider_slides',
 			'type' => 'repeater',
 			'instructions' => '',
-			'required' => 1,
+			'required' => 0,
 			'conditional_logic' => 0,
 			'wrapper' => array(
 				'width' => '',
@@ -124,11 +175,11 @@ If this field is filled out, none of the static slides will be shown; the user w
 			'sub_fields' => array(
 				array(
 					'key' => 'field_5e2f466c018b1',
-					'label' => 'Slide Image (1440x900)',
+					'label' => 'Slide Image (1600x770)',
 					'name' => 'image',
 					'type' => 'image',
 					'instructions' => 'The large image.',
-					'required' => 1,
+					'required' => 0,
 					'conditional_logic' => 0,
 					'wrapper' => array(
 						'width' => '',
@@ -250,6 +301,27 @@ If this field is filled out, none of the static slides will be shown; the user w
 		),
 	),
 	'location' => array(
+		array(
+			array(
+				'param' => 'page_template',
+				'operator' => '==',
+				'value' => 'default',
+			),
+		),
+		array(
+			array(
+				'param' => 'page_template',
+				'operator' => '==',
+				'value' => 'theme-modules.php',
+			),
+		),
+		array(
+			array(
+				'param' => 'page_template',
+				'operator' => '==',
+				'value' => 'blog-archive.php',
+			),
+		),
 		array(
 			array(
 				'param' => 'page_type',

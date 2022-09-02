@@ -7,10 +7,14 @@
 
 .content-grid-wrapper {
 	.content-grid-headline {
-		text-align: center;
+		display: inline-block;
+		margin-bottom: 40px;
+		text-align: left;
+		border-bottom-width: 1px;
+		border-bottom-style: solid;
 	}
 	.content-grid-intro {
-		text-align: center;
+		text-align: left;
 		margin: 0 auto;
 	}
 	.content-grid-items-wrapper {
@@ -18,45 +22,60 @@
 		flex-direction: row;
 		flex-wrap: wrap;
 		justify-content: center;
-		align-items: center;
-		// margin-top: 80px;
+		align-items: flex-start;
+		@media #{$ipad-and-down} {
+			flex-direction: column;
+		}
 		&.content-grid-columns-2 {
+			gap: 100px;
+			@media #{$ipad-and-down} {
+				gap: 40px;
+			}
 			.content-grid-single-item-wrapper {
-				width: 50%;
+				width: calc(50% - 50px);
+				@media #{$ipad-and-down} {
+					width: 100%;
+				}
 			}
 		}
 		&.content-grid-columns-3 {
+			gap: 50px;
 			.content-grid-single-item-wrapper {
-				width: 33%;
-				@media #{$small-and-down} {
-					width: 50%;
+				width: calc(33% - 25px);
+				@media #{$ipad-and-down} {
+					width: 100%;
 				}
 			}	
 		}
 		&.content-grid-columns-4 {
 			.content-grid-single-item-wrapper {
 				width: 25%;
-				@media #{$small-and-down} {
-					width: 50%;
+				@media #{$ipad-and-down} {
+					width: 100%;
 				}
 			}
 		}
 		&.content-grid-columns-5 {
 			.content-grid-single-item-wrapper {
 				width: 20%;
-				@media #{$small-and-down} {
-					width: 50%;
+				@media #{$ipad-and-down} {
+					width: 100%;
 				}
 			}
 		}
 		.content-grid-single-item-wrapper {
-			padding: 50px;
+			padding: 0;
 			display: flex;
-			flex-direction: column;
+			flex-direction: row;
 			flex-wrap: nowrap;
-			align-items: center;
+			align-items: flex-start;
 			justify-content: center;
-			min-height: 140px;
+			gap: 50px;
+			&:hover {
+				a > img, img {
+					top: -20px;
+				}
+			}
 			@media #{$small-and-down} {
 				padding: $content-padding-mobile;
 			}
@@ -79,15 +98,22 @@
 				}
 			}
 			h3 {
-				text-align: center;
+				margin-top: 0;
+				text-align: left;
 			}
 			.content-grid-single-text-wrapper {
-				text-align: center;
+				text-align: left;
+				font-weight: 100;
 			}
 			img {
-				max-width: 100%;
+				position: relative;
+				top: 0;
 				width: auto;
+				max-width: 100%;
 				height: auto;
+				max-height: 125px;
+				filter: grayscale(1);
+				opacity: 0.5;
 				transition: all .2s ease-in-out;
 			}
 		}

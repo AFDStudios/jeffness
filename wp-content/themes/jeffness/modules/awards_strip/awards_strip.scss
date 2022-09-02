@@ -6,11 +6,20 @@
 @import '../../assets/custom/styles/utils/variables';
 
 .gcom-awards-strip-wrapper {
+	.gcom-awards-strip-headline {
+		display: inline-block;
+		margin-bottom: 40px;
+		border-bottom-width: 1px;
+		border-bottom-style: solid;
+	}
 	.gcom-awards-strip-wrapper-inner {
 		display: flex;
 		flex-direction: row;
-		flex-wrap: nowrap;
+		flex-wrap: wrap;
 		padding: $content-padding-mobile;
+		@media #{$ipad-and-down} {
+			gap: 40px;
+		}
 		@media #{$small-and-down} {
 			flex-direction: column;
 		}
@@ -19,6 +28,9 @@
 			.gcom-award-single-wrapper {
 				&:not(:first-of-type) {
 					margin-left: 70px;
+					@media #{$ipad-and-down} {
+						margin-left: 0;
+					}
 				}
 			}
 		}
@@ -43,31 +55,60 @@
 		}
 		.gcom-award-single-wrapper {
 			display: flex;
-			flex-direction: row;
+			flex-direction: column;
 			flex-wrap: nowrap;
+			justify-content: center;
+			align-items: center;
+			text-align: center;
+			transform: scale(1);
+			transition: all 0.2s ease-in;
+			@media #{$ipad-and-down} {
+				flex-basis: 40%;
+				margin-bottom: 40px;
+			}
+			&:hover {
+				transform: scale(1.2);
+				transition: all 0.2s ease-out;
+				.gcom-award-text-wrapper {
+					opacity: 1;
+					transition: opacity 0.2s ease-in;
+				}
+			}
 			img {
-				height: 70px;
+				height: auto;
 				width: auto;
-				margin-right: 32px;
+				max-width: 150px;
+				object-fit: contain;
+				filter: grayscale(1);
+				opacity: 0.5;
 				@media #{$small-and-down} {
-					height: 70px;
-					width: auto;
 					margin-right: 32px;
 					object-fit: contain;
 					object-position: center center;
 					flex: 1;
 					width: 25%;
 				}
+				
 			}
 			.gcom-award-text-wrapper {
+				overflow: hidden;
+				margin-top: 20px;
+				opacity: 0;
+				transition: opacity 0.2s ease-in;
+				@media #{$ipad-and-down} {
+					overflow: visible;
+					opacity: 1;
+				}
 				@media #{$small-and-down} {
 					width: 75%;
 				}
 				.gcom-award-text-headline {
-					font-weight: bold;
+					line-height: 1.2;
 				}
 				.gcom-award-text-description {
-
+					font-size: 14px;
+					line-height: 1.2;
+					margin-top: 10px;
 				}
 			}
 		}

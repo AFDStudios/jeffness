@@ -17,22 +17,30 @@
 	display: inline-block;
 	width: auto;
 	height: auto;
-	padding: 19px 36px;
+	padding: 10px 20px;
 	// min-width: 210px;
 	margin: 10px 0;
 	text-decoration: none;
-	border-radius: 0;
 	text-shadow: none;
 	box-shadow: none;
 	cursor: pointer;
 	transition: all 0.2s;
 	border:2px solid;
+	border-radius: 80px;
 	text-align:center;
 	text-transform:uppercase;
+	i {
+		position: relative;
+		left: 0;
+		transition: left 0.2s ease-in;
+	}
 	&:hover {
+		i {
+			left: 5px;
+		}
 		transition: all 0.2s;
 	}
-	&.transparent{
+	&.btn-transparent{
 		background:transparent;
 	}
 	a{

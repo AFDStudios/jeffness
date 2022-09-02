@@ -31,8 +31,10 @@ function register_acf_block_testimonial_slider()
 	        'keywords'			=> array('gcommerce', 'stile', 'layout', 'testimonial_slider'),
 	        'icon' 				=> 'forms',
 	        'enqueue_assets'	=> function(){
-				wp_enqueue_style( 'flexslider-style', get_template_directory_uri() . '/assets/vendor/flexslider/flexslider.css' );
-				wp_enqueue_script('flexslider-scripts', get_template_directory_uri() . '/assets/vendor/flexslider/jquery.flexslider-min.js', array('jquery'), '1.0.0', true);
+				// Slick Slider
+                wp_enqueue_script('slick-js', get_template_directory_uri() . '/assets/vendor/slick/slick.min.js', array( 'jquery' ), null, true );
+                wp_enqueue_style( 'slick-style', get_template_directory_uri() . '/assets/vendor/slick/slick.css' );
+                // Block styles and scripts
 				wp_enqueue_script('testimonial_slider-js', get_template_directory_uri() . '/modules/testimonial_slider/testimonial_slider.min.js', array( 'jquery' ), null, true );
 				wp_enqueue_style( 'testimonial_slider-style', get_template_directory_uri() . '/modules/testimonial_slider/testimonial_slider.css' );
 			},
@@ -135,6 +137,30 @@ acf_add_local_field_group(array(
 			'layout' => 'block',
 			'button_label' => 'Add Testimonial',
 			'sub_fields' => array(
+				array(
+					'key' => 'field_5e3c79d640779',
+					'label' => 'Photo',
+					'name' => 'photo',
+					'type' => 'image',
+					'instructions' => 'Optional photo of the person to whom the quote is attributed.',
+					'required' => 0,
+					'conditional_logic' => 0,
+					'wrapper' => array(
+						'width' => '',
+						'class' => '',
+						'id' => '',
+					),
+					'return_format' => 'id',
+					'preview_size' => 'medium',
+					'library' => 'all',
+					'min_width' => '',
+					'min_height' => '',
+					'min_size' => '',
+					'max_width' => '',
+					'max_height' => '',
+					'max_size' => '',
+					'mime_types' => '',
+				),
 				array(
 					'key' => 'field_5e3c79c640788',
 					'label' => 'Client/Property Name',

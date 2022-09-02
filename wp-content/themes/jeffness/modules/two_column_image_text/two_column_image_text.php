@@ -138,6 +138,30 @@ acf_add_local_field_group(array(
 			'save_other_choice' => 0,
 		),
 		array(
+			'key' => 'field_61731d282f325',
+			'label' => 'Image Style',
+			'name' => 'image_style',
+			'type' => 'radio',
+			'instructions' => 'Choose what kind of style the image should have.',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array(
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'choices' => array(
+				'default' => 'Default (square, boring, pedestrian yet piquant)',
+				'round' => 'Round (white border, drop shadow, the shape God saw fit to give to the planets, the stars, and developer bellies)',
+			),
+			'allow_null' => 0,
+			'other_choice' => 0,
+			'default_value' => '',
+			'layout' => 'vertical',
+			'return_format' => 'value',
+			'save_other_choice' => 0,
+		),
+		array(
 			'key' => 'field_61731d082f578',
 			'label' => 'Columns',
 			'name' => 'columns',
@@ -179,6 +203,33 @@ acf_add_local_field_group(array(
 					'layout' => 'horizontal',
 					'return_format' => 'value',
 					'save_other_choice' => 0,
+				),
+				array(
+					'key' => 'field_61731d432f57d',
+					'label' => 'Sub-Headline',
+					'name' => 'sub_headline',
+					'type' => 'text',
+					'instructions' => '',
+					'required' => 0,
+					'conditional_logic' => array(
+						array(
+							array(
+								'field' => 'field_61731d282f579',
+								'operator' => '==',
+								'value' => 'text',
+							),
+						),
+					),
+					'wrapper' => array(
+						'width' => '',
+						'class' => '',
+						'id' => '',
+					),
+					'default_value' => '',
+					'placeholder' => '',
+					'prepend' => '',
+					'append' => '',
+					'maxlength' => '',
 				),
 				array(
 					'key' => 'field_61731d432f57a',
@@ -233,6 +284,52 @@ acf_add_local_field_group(array(
 					'toolbar' => 'full',
 					'media_upload' => 1,
 					'delay' => 0,
+				),
+				array(
+					'key' => 'field_61731d572f57e',
+					'label' => 'CTA',
+					'name' => 'cta',
+					'type' => 'link',
+					'instructions' => 'Primary Call to Action button.',
+					'required' => 0,
+					'conditional_logic' => array(
+						array(
+							array(
+								'field' => 'field_61731d282f579',
+								'operator' => '==',
+								'value' => 'text',
+							),
+						),
+					),
+					'wrapper' => array(
+						'width' => '50',
+						'class' => '',
+						'id' => '',
+					),
+					'return_format' => 'array',
+				),
+				array(
+					'key' => 'field_61731d572f57f',
+					'label' => 'CTA 2',
+					'name' => 'cta_2',
+					'type' => 'link',
+					'instructions' => 'Secondary Call to Action button.',
+					'required' => 0,
+					'conditional_logic' => array(
+						array(
+							array(
+								'field' => 'field_61731d282f579',
+								'operator' => '==',
+								'value' => 'text',
+							),
+						),
+					),
+					'wrapper' => array(
+						'width' => '50',
+						'class' => '',
+						'id' => '',
+					),
+					'return_format' => 'array',
 				),
 				array(
 					'key' => 'field_61731d6d2f57c',

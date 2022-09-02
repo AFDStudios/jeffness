@@ -10,6 +10,13 @@
 	// top: 32px;
 }
 
+.no-header {
+	height: 200px;
+	@media #{$ipad-and-down} {
+		height: 100px;
+	}
+}
+
 .header {
 	position: fixed;
 	z-index: 11;
@@ -33,7 +40,7 @@
 		position: fixed;
 		left: 0;
 		right: 0;
-		// min-height: 67px;
+		border-bottom: 1px solid #efefef;
 		.header-wrapper {
 			// min-height: 67px;
 			display: flex;
@@ -59,8 +66,8 @@
 					display: none;
 				}
 				.desktop-header-wrapper {
-					padding-top: 0;
-					padding-bottom: 0;
+					padding-top: 10px;
+					padding-bottom: 10px;
 
 					.sub-menu {
 						padding-top: 23px !important;
@@ -272,12 +279,13 @@
 				}
 			}
 			.mobile-header-wrapper {
+				border-bottom: 1px solid #efefef;
 				.mobile-header-top-row {
 					display: flex;
 					flex-direction: row;
 					flex-wrap: nowrap;
 					justify-content: space-between;
-					align-items: stretch;
+					align-items: center;
 					.sliding-menu-button {
 						width: 50px;
 						border: none;

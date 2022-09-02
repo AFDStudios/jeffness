@@ -8,7 +8,6 @@
 .testimonial-wrapper {
 	position: relative;
 	width: 100%;
-	max-width: 847px;
 	margin: 0 auto;
 	word-break: break-all;
 	background-size: cover;
@@ -23,7 +22,7 @@
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
-		align-items: center;
+		align-items: flex-start;
 		padding: 0;
 		width: 100%;
 		@media #{$medium-and-down} {
@@ -36,7 +35,10 @@
 		}
 		.testimonial-headline {
 			flex: 1;
-			margin-bottom: 80px;
+			display: inline-block;
+			margin-bottom: 40px;
+			border-bottom-width: 1px;
+			border-bottom-style: solid;
 			@media #{$medium-and-down} {
 				padding: 0;
 				margin: 0;
@@ -44,7 +46,7 @@
 				margin-bottom: 50px;
 			}
 		}
-		.flexslider { // .testimonial-right
+		.testimonial-slider { // .testimonial-right
 			border-radius: 0;
 			background: transparent;
 			border: none;
@@ -56,36 +58,54 @@
 				width: 100%;
 				margin: 0;
 			}
-			.slides {
-				padding-bottom: 30px;
-				li.testimonial-single-wrapper {
-					.testimonial-single-client {
-						text-align: center;
-						margin-bottom: 50px;
-						word-break: break-word;
-					}
-					.testimonial-single-top { // this is actually the smaller line on the bottom. Don't ask, legacy code.
+			.testimonial-single-wrapper {
+				position: relative;
+				padding: 30px 20px 20px 60px;
+				img.testimonial-photo {
+					position: absolute;
+					z-index: 1;
+					top: 0;
+					left: 20px;
+					width: 80px;
+					height: 80px;
+					border-radius: 40px;
+				}
+				.testimonial-text-wrapper {
+					padding: 30px 30px 30px 50px;
+					border-radius: 8px;
+					border: 2px solid #428bca;
+					transition: all .25s ease-in-out;
+					.testimonial-single-quote { 
 						position: relative;
 						display: flex;
 						flex-direction: row;
 						flex-wrap: nowrap;
-						justify-content: center;
+						justify-content: flex-start;
 						align-items: center;
-						text-align: center;
-						padding-top: 27px;
-						margin-top: 27px;
+						text-align: left;
+						font-style: italic;
+						line-height: 1.5;
+						word-break: break-word;
 						@media #{$medium-and-down} {
-							text-align: center;
-							padding: 10px;
+							text-align: left;
+							padding: 10px 10px 10px 0;
 						}
 					}
-					.testimonial-single-middle {  // And this is actually the bottom line.
-						margin: 10px 0;
-						text-align: center;
+					.testimonial-single-attribution {
+						color: #bbb;
+						font-size: 14px;
+						text-align: left;
+						word-break: break-word;
+					}
+					.testimonial-single-client {
+						margin-top: 20px;
+						margin-bottom: -10px;
+						text-align: left;
 						word-break: normal;
+						font-weight: 600;
 						@media #{$medium-and-down} {
-							text-align: center;
-							padding: 10px;
+							text-align: left;
+							padding: 10px 10px 10px 0;
 							font-size: 28px;
 						}
 						@media #{$small-and-down} {
@@ -94,25 +114,65 @@
 							font-size: 18px;
 						}
 					}
-
 				}
 			}
-			.flex-control-nav {
-				margin: 0;
-				right: 0;
-				left: 0;
-				li {
-					margin: 0 16px 0 0;
-					a {
-						border: none;
-						background: #d1d1d1;
-						width: 43px;
-						height: 2px;
-						&.flex-active {
-							
-						}
+			.slick-arrow {
+				position: absolute;
+				top: 50%;
+				transform: translateY(-50%);
+				z-index: 1;
+				font-size: 0;
+				line-height: 0;
+				display: block;
+				cursor: pointer;
+				color: transparent;
+				border: 0;
+				outline: none;
+				background: transparent;
+				&:before {
+						content: '';
+						opacity: .6;
+						transition: opacity 0.2s ease-in;
+				}
+				&:hover {
+					&:before {
+						opacity: 1;
+						transition: opacity 0.2s ease-out;
 					}
 				}
+				&.slick-prev {
+					left: 0;
+				}
+				&.slick-next {
+					right: 0;
+				}
+			}
+			// Styling the default Slick dots
+			.slick-dots {
+				display: flex;
+				justify-content: center;
+				margin: 75px 0 0;
+				padding: 1rem 0;
+				list-style-type: none;
+				li {
+					margin: 0;
+				}
+			
+				button {
+					display: block;
+					border: none;
+					padding: 0;
+					border-radius: 0;
+					background: #d1d1d1;
+					width: 70px;
+					height: 4px;
+					text-indent: -9999px;
+				}
+			
+				li.slick-active button {
+					background: #428bca;
+				}
+				
 			}
 		}
 		

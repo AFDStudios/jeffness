@@ -1,5 +1,5 @@
 <?php get_header(); ?>
-			<?php include_once('modules/header_block/header_block_render.php'); 
+			<?php include_once('modules/home_top_slider/home_top_slider_render.php'); 
 			// Each page can have image and background colors chosen. We need to capture those into a variable to output in the main container.
 			$page_style = '';
 			if ( get_field('page_background_image', get_the_ID() ) ) :

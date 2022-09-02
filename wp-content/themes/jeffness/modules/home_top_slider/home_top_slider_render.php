@@ -1,17 +1,7 @@
 <?php   
 $home_top_slider = get_field('home_top_slider_slides');
-
-// Create id attribute allowing for custom "anchor" value.
-$id = 'gcom-gallery-wrapper-id-' . $block['id'];
-if( !empty($block['anchor']) ) {
-	$id = $block['anchor'];
-}
-
-// Get any manually entered class name from the block
-if( !empty($block['className']) ) {
-	$className = $block['className'] . ' ';
-}
-
+$overlay = get_field('overlay');
+$bottom_border = get_field('bottom_border');
 if ( get_field('video_embed') ) : 
 	$video_embed = get_field('video_embed');
 	$video_type = get_field('video_type');
@@ -25,7 +15,7 @@ if ( get_field('video_embed') ) :
 	if ( $video_type == 'vimeo' ) :
 		// Enqueue the Vimeo library
 		wp_enqueue_script('vimeo-scripts', get_template_directory_uri() . '/assets/vendor/vimeo/player.min.js', array('jquery'), '1.0.0', true); ?>
-		<section id="front-page-video-wrapper" class="<?php echo $className; ?>header-slider video-vimeo"<?php if ($video_poster ) { echo ' style="background-image:url(' . $video_poster . ');"'; } ?>>
+		<section id="front-page-video-wrapper" class="header-slider video-vimeo"<?php if ($video_poster ) { echo ' style="background-image:url(' . $video_poster . ');"'; } ?>>
 			<div class="video-controls-wrapper">
 				<button class="header-video-control header-play-button hidden" tabindex="0" aria-label="Play Video">
 					<i class="fa fa-play" aria-hidden="true"></i>
@@ -44,7 +34,7 @@ if ( get_field('video_embed') ) :
 			</div>
 		</section>
 	<?php else : ?>
-		<section id="front-page-video-wrapper" class="<?php echo $className; ?>header-slider video-youtube">
+		<section id="front-page-video-wrapper" class="header-slider video-youtube">
 			<div class="video-controls-wrapper">
 				<button class="header-video-control header-play-button hidden" tabindex="0" aria-label="Play Video">
 					<i class="fa fa-play" aria-hidden="true"></i>
@@ -64,7 +54,7 @@ if ( get_field('video_embed') ) :
 			</div>
 		</section>
 	<?php endif; ?>
-<?php elseif ( !empty( $home_top_slider ) ) : 
+<?php elseif ( !empty( $home_top_slider[0]['image'] ) ) : 
 	// =========================================
 	//   ENQUEUE STYLES AND SCRIPTS
 	// =========================================
@@ -79,7 +69,7 @@ if ( get_field('video_embed') ) :
 	wp_enqueue_style('home-top-slider-module-styles');
 	wp_enqueue_script('home-top-slider-module-styles-script', get_template_directory_uri() . '/modules/home_top_slider/home_top_slider.min.js#deferload', array(), '', 'all' ) ;
 	?>
-	<section id="front-page-slider-wrapper" class="<?php echo $className; ?>header-slider<?php if (count($home_top_slider) == 1) { echo ' one-slide'; } ?>">
+	<section id="front-page-slider-wrapper" class="header-slider<?php if (count($home_top_slider) == 1) { echo ' one-slide'; } ?>">
 		<?php
 		// We have a slider so let's output our arrows.
 		echo '<style>';
@@ -110,9 +100,7 @@ if ( get_field('video_embed') ) :
 							endif;
 							echo '<a data-fancybox href="' . $slide['video_url'] . '" class="video-play-wrapper"><img src="' . $play_icon['url'] . '" alt="' . $play_icon['alt'] . '"></a>';
 						endif;
-						?>
-						<div class="overlay"></div>
-						<?php
+						if ( $overlay != 'none' ) { echo '<div class="overlay ' . $overlay . '"></div>'; }
 						// Check to see if we have an image. 
 						if ( $slide['image'] ) :
 							// We have an image, so use that to set all our variables.
@@ -123,12 +111,6 @@ if ( get_field('video_embed') ) :
 							// Thumbnail size attributes.
 							$size = THEME_NAME . '-home-top-slider';
 							$thumb = $image['sizes'][ $size ];
-						else:
-							// We do NOT have an image so use the placeholder one.
-							$url = '//via.placeholder.com/1440x900';
-							$alt = 'Placeholder Image for Header slider';
-							// Thumbnail size attributes.
-							$thumb = '//via.placeholder.com/1440x900';
 						endif;
 						// See if a mobile-specific image has been selected.
 						if ( $slide['image_mobile'] ) :
@@ -148,12 +130,6 @@ if ( get_field('video_embed') ) :
 							// Thumbnail size attributes.
 							$size_mobile = THEME_NAME . '-home-top-slider-mobile';
 							$thumb_mobile = $image['sizes'][ $size_mobile ];
-						else:
-							// Neither a desktop nor a mobile image was selected, so fall back to Placeholder.
-							$url_mobile = '//via.placeholder.com/500x630';
-							$alt_mobile = 'Mobile Placeholder Image for Header slider';
-							// Thumbnail size attributes.
-							$thumb_mobile = '//via.placeholder.com/500x630';
 						endif;
 						?>
 						<picture>
@@ -169,8 +145,14 @@ if ( get_field('video_embed') ) :
 				<?php endforeach; ?>
 			</ul>
 		</div>
-		<div class="home-top-slider-counter-wrapper gallery-progress fg-white">
-			<span class="home-top-slider-current fg-white">1</span> / <span class="home-top-slider-total fg-white"><?php echo count($home_top_slider); ?></span>
+		<?php if ( count($home_top_slider) > 1 ) : ?>
+		<div class="home-top-slider-current-wrapper gallery-progress fg-white bg-c1-opacity font-nav">
+			<span class="home-top-slider-current fg-white">1</span> / <span class="big-image-slider-total fg-white"><?php echo count($home_top_slider); ?></span>
 		</div>
+		<?php endif; ?>	
+		<?php if( $bottom_border ) { echo wp_get_attachment_image( $bottom_border, "full", "", ["class" => "home-top-slider-border-bottom"] ); } ?>
 	</section>
-<?php endif; ?>
+<?php 
+else :
+	echo '<div class="no-header"></div>';
+endif; ?>

@@ -1,0 +1,40 @@
+// -----------------------------------------------------------------------------
+// This file contains all overrides for the GT3 Photo Gallery plugin.
+// -----------------------------------------------------------------------------
+
+.gt3pg-isotope-item {
+	.text_info_wrapper {
+		padding: 40px;
+		background-color: #eee;
+		@media #{$small-and-down} {
+			padding: 10px;
+		}
+		.text_wrap_title {
+			.title {
+				color: #3a3a3a;
+				font-size: 21px;
+				font-weight: 100;
+			}
+		}
+		.text_wrap_caption {
+			@media #{$small-and-down} {
+				display: none;
+			}
+			.caption {
+
+			}
+		}
+	}
+}
+
+.gt3-photo-gallery-pro--isotope_gallery .gallery-isotope-wrapper {
+	@media #{$small-and-down} {
+		margin-right: 0;
+	}
+}
+
+.gt3-photo-gallery-pro--isotope_gallery [data-cols-mobile="2"] .gt3pg-isotope-item {
+	@media #{$small-and-down} {
+		padding-right: 10px;
+	}
+}

@@ -1,0 +1,48 @@
+/**
+  UTILS
+*/
+@import '../../assets/custom/styles/utils/functions';
+@import '../../assets/custom/styles/utils/mixins';
+@import '../../assets/custom/styles/utils/variables';
+
+.gcom-gallery-wrapper {
+	overflow: hidden;
+	.gcom-gallery-nav-wrapper {
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		justify-content: flex-start;
+		margin-bottom: 40px;
+		.gcom-gallery-nav-btn {
+			opacity: 0.5;
+			transition: opacity 0.2s ease-out;
+			&.active {
+				transition: opacity 0.2s ease-in;
+				opacity: 1;
+			}
+			&:not(:first-of-type) {
+				margin-left: 20px;
+			}
+		}
+	}
+	.gcom-gallery-all-wrapper {
+		position: relative;
+		@media #{$small-and-down} {
+			margin-left : calc( -100vw / 2 + 100% / 2 );
+			margin-right : calc( -100vw / 2 + 100% / 2 );
+			max-width	: 100vw;
+		}
+		.gcom-gallery-single-wrapper {
+			width: 100%;
+			position: absolute;
+			left: -20000px;
+			opacity: 0;
+			transition: opacity 0.2s ease-out;
+			&.active {
+				position: static;
+				opacity: 1;
+				transition: opacity 0.2s ease-out;
+			}
+		}
+	}
+}

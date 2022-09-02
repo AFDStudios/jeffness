@@ -148,7 +148,7 @@ function my_button_styes_head(){
 			/* Transparent CTA Button Colors */
 			.btn.btn-transparent,
 			.btn-primary.btn-transparent,
-			.btn.btn-transparent span { color: <?php echo $btn_primary_bg; ?>; background-color: transparent; border-color: <?php echo $btn_primary_bg; ?>;border-style: solid; border-width: 2px; }
+			.btn.btn-transparent span { color: <?php echo $btn_primary_text; ?>; background-color: transparent; border-color: <?php echo $btn_primary_bg; ?>;border-style: solid; border-width: 2px; }
 
 			.btn.btn-transparent:hover span,
 			.btn.btn-transparent:hover,
@@ -184,7 +184,7 @@ function my_button_styes_head(){
 			.btn-black:hover span { color: <?php echo $btn_black_text_hover; ?>; background-color: <?php echo $btn_black_bg_hover; ?>; }
 
 			 .btn-black.btn-transparent,
-			.btn-black.btn-transparent span { color: <?php echo $btn_black_bg; ?>; background-color: transparent; border-color: <?php echo $btn_black_bg; ?>; border-style: solid; border-width: 2px; }
+			.btn-black.btn-transparent span { color: <?php echo $btn_black_text; ?>; background-color: transparent; border-color: <?php echo $btn_black_bg; ?>; border-style: solid; border-width: 2px; }
 
 			.btn-black.btn-transparent:hover,
 			.btn-black.btn-transparent:hover span { color: <?php echo $btn_black_text; ?>; background-color: <?php echo $btn_black_bg; ?>; }

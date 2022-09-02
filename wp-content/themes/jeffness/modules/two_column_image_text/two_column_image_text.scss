@@ -6,8 +6,9 @@
 @import '../../assets/custom/styles/utils/variables';
 
 .tcit-wrapper {
+	padding: 0 $content-padding-right;
 	@media #{$large-and-down} {
-		padding: $content-padding;
+		padding: 0;
 	}
 	@media #{$medium-and-down} {
 		padding: $content-padding-mobile;
@@ -26,11 +27,16 @@
 		display: flex;
 		flex-direction: row;
 		flex-wrap: nowrap;
+		gap: 110px;
 		@media #{$medium-and-down} {
+			gap: 50px;
+			padding: 0;
+		}
+		@media #{$ipad-and-down} {
 			flex-direction: column;
 		}
 		&.column-order-reverse {
-			@media #{$medium-and-down} {
+			@media #{$ipad-and-down} {
 				flex-direction: column-reverse;
 				.tcit-column {
 					&:nth-child(1) {
@@ -49,41 +55,64 @@
 			align-items: flex-end;
 		}
 		.tcit-column {
-			flex-basis: 50%;
 			@media #{$medium-and-down} {
-				flex-basis: 100%;
+				// flex-basis: 100%;
 				&:nth-child(2) {
 					margin-top: 25px;
 				}
 			}
 			&-image {
 				margin: 0 auto;
+				@media #{$medium-and-down} {
+					width: 40%;
+				}
+				@media #{$ipad-and-down} {
+					width: 100%;
+					text-align: center;
+				}
 				img.tcit-image {
 					max-width: 100%;
 					height: auto;
 					@media #{$medium-and-down} {
-						padding: $content-padding;
+						// padding: $content-padding;
 					}
 					@media #{$small-and-down} {
 						padding: 0;
 				    margin-left: calc( -100vw / 2 + 100% / 2);
 						margin-right: calc( -100vw / 2 + 100% / 2);
-						width: 100vw;
+						width: auto;
 						max-width: 100vw;
 						border: none;
+					}
+					&.image-style-round {
+						border-radius: 1000px;
+						box-shadow: 0 0 25px 0 rgb(0 0 0 / 10%);
+						border: 18px solid #fff;
 					}
 				}
 			}
 			&-text {
+				flex: 1;
 				padding-right: $content-padding-right;
 				@media #{$medium-and-down} {
 					padding-right: 0;
 				}
+				.tcit-sub-headline {
+					font-size: 16px;
+					color: #aaa;
+					font-weight: 300;
+					margin-bottom: 20px;
+				}
 				.tcit-headline {
-					
+					margin-bottom: 30px;
 				}
 				.tcit-text-block {
 
+				}
+				.cta-wrapper {
+					.btn:nth-child(2) {
+						margin-left: 20px;
+					}
 				}
 			}
 		}

@@ -27,7 +27,7 @@
 		cursor: pointer;
 		font-size: 1.5em;
 		margin-bottom: $expander-toggle-size;
-		padding-bottom: $expander-toggle-size / 4;
+		padding-bottom: calc($expander-toggle-size / 4);
 		text-decoration: none;
 
 		&:before {

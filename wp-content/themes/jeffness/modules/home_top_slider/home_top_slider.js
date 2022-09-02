@@ -8,6 +8,7 @@ jQuery(document).ready(function($) {
 			nextText: "",
 			controlNav: false,
 			directionNav: true,
+			controlsContainer: '.home-top-slider-current-wrapper',
 			after: function(slider) {
 			$slideNumber = $(this).currentSlide;
 				$('.home-top-slider-current').text(slider.currentSlide+1);

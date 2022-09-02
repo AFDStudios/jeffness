@@ -87,7 +87,7 @@ class Aria_Walker_Nav_Menu extends Walker_Nav_Menu {
 		 *
 		 * @param array  $args  An array of arguments.
 		 * @param object $item  Menu item data object.
-		 * @param int    $depth Depth of menu item. Used for padding.
+		 * @param int	$depth Depth of menu item. Used for padding.
 		 */
 		$args = apply_filters( 'nav_menu_item_args', $args, $item, $depth );
 
@@ -98,9 +98,9 @@ class Aria_Walker_Nav_Menu extends Walker_Nav_Menu {
 		 * @since 4.1.0 The `$depth` parameter was added.
 		 *
 		 * @param array  $classes The CSS classes that are applied to the menu item's `<li>` element.
-		 * @param object $item    The current menu item.
-		 * @param array  $args    An array of {@see wp_nav_menu()} arguments.
-		 * @param int    $depth   Depth of menu item. Used for padding.
+		 * @param object $item	The current menu item.
+		 * @param array  $args	An array of {@see wp_nav_menu()} arguments.
+		 * @param int	$depth   Depth of menu item. Used for padding.
 		 */
 		$class_names = join( ' ', apply_filters( 'nav_menu_css_class', array_filter( $classes ), $item, $args, $depth ) );
 		$class_names = $class_names ? ' class="' . esc_attr( $class_names ) . '"' : '';
@@ -112,9 +112,9 @@ class Aria_Walker_Nav_Menu extends Walker_Nav_Menu {
 		 * @since 4.1.0 The `$depth` parameter was added.
 		 *
 		 * @param string $menu_id The ID that is applied to the menu item's `<li>` element.
-		 * @param object $item    The current menu item.
-		 * @param array  $args    An array of {@see wp_nav_menu()} arguments.
-		 * @param int    $depth   Depth of menu item. Used for padding.
+		 * @param object $item	The current menu item.
+		 * @param array  $args	An array of {@see wp_nav_menu()} arguments.
+		 * @param int	$depth   Depth of menu item. Used for padding.
 		 */
 		$id = apply_filters( 'nav_menu_item_id', 'menu-item-'. $item->ID, $item, $args, $depth );
 		$id = $id ? ' id="' . esc_attr( $id ) . '"' : '';
@@ -128,9 +128,9 @@ class Aria_Walker_Nav_Menu extends Walker_Nav_Menu {
 
 		$atts = array();
 		$atts['title']  = ! empty( $item->attr_title ) ? $item->attr_title : '';
-		$atts['target'] = ! empty( $item->target )     ? $item->target     : '';
-		$atts['rel']    = ! empty( $item->xfn )        ? $item->xfn        : '';
-		$atts['href']   = ! empty( $item->url )        ? $item->url        : '';
+		$atts['target'] = ! empty( $item->target )	 ? $item->target	 : '';
+		$atts['rel']	= ! empty( $item->xfn )		? $item->xfn		: '';
+		$atts['href']   = ! empty( $item->url )		? $item->url		: '';
 
 		/**
 		 * Filter the HTML attributes applied to a menu item's anchor element.
@@ -139,16 +139,16 @@ class Aria_Walker_Nav_Menu extends Walker_Nav_Menu {
 		 * @since 4.1.0 The `$depth` parameter was added.
 		 *
 		 * @param array $atts {
-		 *     The HTML attributes applied to the menu item's `<a>` element, empty strings are ignored.
+		 *	 The HTML attributes applied to the menu item's `<a>` element, empty strings are ignored.
 		 *
-		 *     @type string $title  Title attribute.
-		 *     @type string $target Target attribute.
-		 *     @type string $rel    The rel attribute.
-		 *     @type string $href   The href attribute.
+		 *	 @type string $title  Title attribute.
+		 *	 @type string $target Target attribute.
+		 *	 @type string $rel	The rel attribute.
+		 *	 @type string $href   The href attribute.
 		 * }
 		 * @param object $item  The current menu item.
 		 * @param array  $args  An array of {@see wp_nav_menu()} arguments.
-		 * @param int    $depth Depth of menu item. Used for padding.
+		 * @param int	$depth Depth of menu item. Used for padding.
 		 */
 		$atts = apply_filters( 'nav_menu_link_attributes', $atts, $item, $args, $depth );
 
@@ -171,7 +171,7 @@ class Aria_Walker_Nav_Menu extends Walker_Nav_Menu {
 		 * @param string $title The menu item's title.
 		 * @param object $item  The current menu item.
 		 * @param array  $args  An array of {@see wp_nav_menu()} arguments.
-		 * @param int    $depth Depth of menu item. Used for padding.
+		 * @param int	$depth Depth of menu item. Used for padding.
 		 */
 		$title = apply_filters( 'nav_menu_item_title', $title, $item, $args, $depth );
 
@@ -191,9 +191,9 @@ class Aria_Walker_Nav_Menu extends Walker_Nav_Menu {
 		 * @since 3.0.0
 		 *
 		 * @param string $item_output The menu item's starting HTML output.
-		 * @param object $item        Menu item data object.
-		 * @param int    $depth       Depth of menu item. Used for padding.
-		 * @param array  $args        An array of {@see wp_nav_menu()} arguments.
+		 * @param object $item		Menu item data object.
+		 * @param int	$depth	   Depth of menu item. Used for padding.
+		 * @param array  $args		An array of {@see wp_nav_menu()} arguments.
 		 */
 		$output .= apply_filters( 'walker_nav_menu_start_el', $item_output, $item, $depth, $args );
 	}
@@ -210,19 +210,19 @@ function stile_application_scripts()
 		// Save some cycles, only load if we're not in the admin area.
 		if ( !is_admin() ) {
 			// Pickadate: http://amsul.ca/pickadate.js/
-		    wp_register_style( 'pickadate-classic', get_template_directory_uri() . '/assets/vendor/date_picker/classic.css', array(), '', 'all' );
-		    wp_register_style( 'pickadate-classic-date', get_template_directory_uri() . '/assets/vendor/date_picker/classic.date.css', array(), '', 'all' );
-		    wp_register_style( 'pickadate-classic-time', get_template_directory_uri() . '/assets/vendor/date_picker/classic.time.css', array(), '', 'all' );
-		    wp_register_style( 'pickadate-default', get_template_directory_uri() . '/assets/vendor/date_picker/default.css', array(), '', 'all' );
-		    wp_register_style( 'pickadate-default-date', get_template_directory_uri() . '/assets/vendor/date_picker/default.date.css', array(), '', 'all' );
-		    wp_register_style( 'pickadate-default-time', get_template_directory_uri() . '/assets/vendor/date_picker/default.time.css', array(), '', 'all' );
-		    wp_enqueue_style( 'pickadate-default' );
-		    wp_enqueue_style( 'pickadate-default-date' );
+			wp_register_style( 'pickadate-classic', get_template_directory_uri() . '/assets/vendor/date_picker/classic.css', array(), '', 'all' );
+			wp_register_style( 'pickadate-classic-date', get_template_directory_uri() . '/assets/vendor/date_picker/classic.date.css', array(), '', 'all' );
+			wp_register_style( 'pickadate-classic-time', get_template_directory_uri() . '/assets/vendor/date_picker/classic.time.css', array(), '', 'all' );
+			wp_register_style( 'pickadate-default', get_template_directory_uri() . '/assets/vendor/date_picker/default.css', array(), '', 'all' );
+			wp_register_style( 'pickadate-default-date', get_template_directory_uri() . '/assets/vendor/date_picker/default.date.css', array(), '', 'all' );
+			wp_register_style( 'pickadate-default-time', get_template_directory_uri() . '/assets/vendor/date_picker/default.time.css', array(), '', 'all' );
+			wp_enqueue_style( 'pickadate-default' );
+			wp_enqueue_style( 'pickadate-default-date' );
 
-		    wp_register_script( 'pickadate-picker-js', get_template_directory_uri() . '/assets/vendor/date_picker/picker.js', array(), 'jquery', true );
-		    wp_register_script( 'pickadate-picker-date-js', get_template_directory_uri() . '/assets/vendor/date_picker/picker.date.js', array(), 'jquery', true );
-		    wp_enqueue_script( 'pickadate-picker-js' );
-		    wp_enqueue_script( 'pickadate-picker-date-js' );
+			wp_register_script( 'pickadate-picker-js', get_template_directory_uri() . '/assets/vendor/date_picker/picker.js', array(), 'jquery', true );
+			wp_register_script( 'pickadate-picker-date-js', get_template_directory_uri() . '/assets/vendor/date_picker/picker.date.js', array(), 'jquery', true );
+			wp_enqueue_script( 'pickadate-picker-js' );
+			wp_enqueue_script( 'pickadate-picker-date-js' );
 
 			// Main theme scripts
 			wp_enqueue_script('stile-scripts', get_template_directory_uri() . '/assets/dist/scripts/main.min.js', array('jquery'), '1.0.0', true);
@@ -246,10 +246,10 @@ function stile_application_scripts()
 			wp_enqueue_script('flexslider-scripts', get_template_directory_uri() . '/assets/vendor/flexslider/jquery.flexslider-min.js', array('jquery'), '1.0.0', true);
 
 			// Selectric Select Box Replacement Library: http://selectric.js.org/
-		    wp_register_style( 'selectriccss', get_template_directory_uri() . '/assets/vendor/selectric/selectric.css',array(), '', 'all'   );
-		    wp_register_script( 'selectricjs', get_template_directory_uri() . '/assets/vendor/selectric/jquery.selectric.min.js', array('jquery'), '1.0.0', true);
-		    wp_enqueue_style( 'selectriccss' );
-		    wp_enqueue_script( 'selectricjs' );
+			wp_register_style( 'selectriccss', get_template_directory_uri() . '/assets/vendor/selectric/selectric.css',array(), '', 'all'   );
+			wp_register_script( 'selectricjs', get_template_directory_uri() . '/assets/vendor/selectric/jquery.selectric.min.js', array('jquery'), '1.0.0', true);
+			wp_enqueue_style( 'selectriccss' );
+			wp_enqueue_script( 'selectricjs' );
 
 			// Localize AJAX
 			wp_localize_script( 'stile-scripts', 'ajaxpagination', array(
@@ -338,19 +338,19 @@ function wp_get_attachment( $attachment_id, $size = NULL ) {
 
   $attachment = get_post( $attachment_id );
   if ( $size != NULL) :
-    $src = wp_get_attachment_image_src( $attachment_id, $size );
-    $src = $src['0'];
+	$src = wp_get_attachment_image_src( $attachment_id, $size );
+	$src = $src['0'];
   else:
-    $src = wp_get_attachment_url( $attachment->ID );
+	$src = wp_get_attachment_url( $attachment->ID );
   endif;
 
   return array(
-      'alt' => get_post_meta( $attachment->ID, '_wp_attachment_image_alt', true ),
-      'caption' => $attachment->post_excerpt,
-      'description' => $attachment->post_content,
-      'href' => get_permalink( $attachment->ID ),
-      'src' => $src,
-      'title' => $attachment->post_title
+	  'alt' => get_post_meta( $attachment->ID, '_wp_attachment_image_alt', true ),
+	  'caption' => $attachment->post_excerpt,
+	  'description' => $attachment->post_content,
+	  'href' => get_permalink( $attachment->ID ),
+	  'src' => $src,
+	  'title' => $attachment->post_title
   );
 }
 
@@ -364,36 +364,36 @@ function wp_get_attachment( $attachment_id, $size = NULL ) {
 	echo $primary_category->name;
 */
 function get_post_primary_category($post_id, $term='category', $return_all_categories=false){
-    $return = array();
+	$return = array();
 
-    if (class_exists('WPSEO_Primary_Term')){
-        // Show Primary category by Yoast if it is enabled & set
-        $wpseo_primary_term = new WPSEO_Primary_Term( $term, $post_id );
-        $primary_term = get_term($wpseo_primary_term->get_primary_term());
+	if (class_exists('WPSEO_Primary_Term')){
+		// Show Primary category by Yoast if it is enabled & set
+		$wpseo_primary_term = new WPSEO_Primary_Term( $term, $post_id );
+		$primary_term = get_term($wpseo_primary_term->get_primary_term());
 
-        if (!is_wp_error($primary_term)){
-            $return['primary_category'] = $primary_term;
-        }
-    }
+		if (!is_wp_error($primary_term)){
+			$return['primary_category'] = $primary_term;
+		}
+	}
 
-    if (empty($return['primary_category']) || $return_all_categories){
-        $categories_list = get_the_terms($post_id, $term);
+	if (empty($return['primary_category']) || $return_all_categories){
+		$categories_list = get_the_terms($post_id, $term);
 
-        if (empty($return['primary_category']) && !empty($categories_list)){
-            $return['primary_category'] = $categories_list[0];  //get the first category
-        }
-        if ($return_all_categories){
-            $return['all_categories'] = array();
+		if (empty($return['primary_category']) && !empty($categories_list)){
+			$return['primary_category'] = $categories_list[0];  //get the first category
+		}
+		if ($return_all_categories){
+			$return['all_categories'] = array();
 
-            if (!empty($categories_list)){
-                foreach($categories_list as &$category){
-                    $return['all_categories'][] = $category->term_id;
-                }
-            }
-        }
-    }
+			if (!empty($categories_list)){
+				foreach($categories_list as &$category){
+					$return['all_categories'][] = $category->term_id;
+				}
+			}
+		}
+	}
 
-    return $return;
+	return $return;
 }
 
 // =========================================
@@ -402,27 +402,27 @@ function get_post_primary_category($post_id, $term='category', $return_all_categ
 
 // Add explicit autocomplete to Gravity Forms for ADA compliance
 add_filter( 'gform_form_tag', function( $form_tag ) {
-    return str_replace( '>', ' autocomplete="on">', $form_tag );
+	return str_replace( '>', ' autocomplete="on">', $form_tag );
 }, 11 );
 
 // Add ADA required role to Gravity Forms validation errors.
 add_filter( 'gform_validation_message', function ( $message, $form ) {
-    if ( gf_upgrade()->get_submissions_block() ) {
-        return $message;
-    }
+	if ( gf_upgrade()->get_submissions_block() ) {
+		return $message;
+	}
  
-    $message = "<div class='validation_error' role='alert'><p>There was a problem with your submission. Errors have been highlighted below.</p>";
-    $message .= '<ul>';
+	$message = "<div class='validation_error' role='alert'><p>There was a problem with your submission. Errors have been highlighted below.</p>";
+	$message .= '<ul>';
  
-    foreach ( $form['fields'] as $field ) {
-        if ( $field->failed_validation ) {
-            $message .= sprintf( '<li>%s - %s</li>', GFCommon::get_label( $field ), $field->validation_message );
-        }
-    }
+	foreach ( $form['fields'] as $field ) {
+		if ( $field->failed_validation ) {
+			$message .= sprintf( '<li>%s - %s</li>', GFCommon::get_label( $field ), $field->validation_message );
+		}
+	}
  
-    $message .= '</ul></div>';
+	$message .= '</ul></div>';
  
-    return $message;
+	return $message;
 }, 10, 2 );
 
 /**
@@ -438,26 +438,26 @@ add_filter( 'gform_next_button', 'input_to_button', 10, 2 );
 add_filter( 'gform_previous_button', 'input_to_button', 10, 2 );
 add_filter( 'gform_submit_button', 'input_to_button', 10, 2 );
 function input_to_button( $button, $form ) {
-    $dom = new DOMDocument();
-    $dom->loadHTML( '<?xml encoding="utf-8" ?>' . $button );
-    $input = $dom->getElementsByTagName( 'input' )->item(0);
-    $new_button = $dom->createElement( 'button' );
-    $new_button->appendChild( $dom->createTextNode( $input->getAttribute( 'value' ) ) );
-    $input->removeAttribute( 'value' );
-    $classes = $input->getAttribute( 'class' );
-    $classes .= " btn btn-black btn-transparent";
-    $input->setAttribute( 'class', $classes );
-    foreach( $input->attributes as $attribute ) {
-        $new_button->setAttribute( $attribute->name, $attribute->value );
-    }
-    $input->parentNode->replaceChild( $new_button, $input );
+	$dom = new DOMDocument();
+	$dom->loadHTML( '<?xml encoding="utf-8" ?>' . $button );
+	$input = $dom->getElementsByTagName( 'input' )->item(0);
+	$new_button = $dom->createElement( 'button' );
+	$new_button->appendChild( $dom->createTextNode( $input->getAttribute( 'value' ) ) );
+	$input->removeAttribute( 'value' );
+	$classes = $input->getAttribute( 'class' );
+	$classes .= " btn btn-black btn-transparent";
+	$input->setAttribute( 'class', $classes );
+	foreach( $input->attributes as $attribute ) {
+		$new_button->setAttribute( $attribute->name, $attribute->value );
+	}
+	$input->parentNode->replaceChild( $new_button, $input );
  
-    return $dom->saveHtml( $new_button );
+	return $dom->saveHtml( $new_button );
 }
 
 add_filter( 'gform_tabindex_1', 'change_tabindex' , 10, 2 );
 function change_tabindex( $tabindex, $form ) {
-    return 40;
+	return 40;
 }
 
 // =========================================
@@ -476,13 +476,13 @@ remove_filter('the_excerpt', 'wptexturize');
 // =========================================
 /* Used in header.php to get ligher and darker versions of base theme colors. */
 function hex2Rgb($hex, $alpha = false) {
-   $hex      = str_replace('#', '', $hex);
+   $hex	  = str_replace('#', '', $hex);
    $length   = strlen($hex);
    $rgb['r'] = hexdec($length == 6 ? substr($hex, 0, 2) : ($length == 3 ? str_repeat(substr($hex, 0, 1), 2) : 0));
    $rgb['g'] = hexdec($length == 6 ? substr($hex, 2, 2) : ($length == 3 ? str_repeat(substr($hex, 1, 1), 2) : 0));
    $rgb['b'] = hexdec($length == 6 ? substr($hex, 4, 2) : ($length == 3 ? str_repeat(substr($hex, 2, 1), 2) : 0));
    if ( $alpha ) {
-      $rgb['a'] = $alpha;
+	  $rgb['a'] = $alpha;
    }
    return $rgb;
 }
@@ -565,41 +565,42 @@ add_action('wp_head', 'stile_dns_prefetch', 0);
 /* Just some small things to spruce up the login page a little.  */
 // Custom login logo
 function gcom_login_logo() { ?>
-    <style type="text/css">
-    	<?php if ( get_field('header_logo', 'option') ) : $logo = get_field('header_logo', 'option'); ?>
-        #login h1 a, .login h1 a {
-            background-image: url(<?php echo $logo['url'];?>);
+	<style type="text/css">
+		<?php if ( get_field('header_logo', 'option') ) : $logo = get_field('header_logo', 'option'); ?>
+		#login h1 a, .login h1 a {
+			background-image: url(<?php echo $logo['url'];?>);
 		height:auto;
 		width:222px;
 		background-size: contain;
 		background-repeat: no-repeat;
-        	padding-bottom: 30px;
-        }
-    	<?php endif; ?>
-    	body.login {
-    		background: #ffffff;
-    		background-image: url(<?php echo get_template_directory_uri() . '/assets/images/white-mountain.jpg'; ?>);
-    		background-size: cover;
-    		background-position: bottom left;
-    	}
-    	body.login div#login form#loginform p label,
-    	body.login div#login form#loginform > div > label {
-    		
-    	}
-    </style>
+			padding-bottom: 30px;
+		}
+		<?php endif; ?>
+		body.login {
+			background-image: url(<?php echo get_template_directory_uri() . '/assets/images/seamless-wave-pattern.png'; ?>);
+			background-size: contain;
+			background-position: bottom;
+			background-repeat: repeat-x;
+			background-blend-mode: screen;
+		}
+		body.login div#login form#loginform p label,
+		body.login div#login form#loginform > div > label {
+			
+		}
+	</style>
 <?php }
 add_action( 'login_enqueue_scripts', 'gcom_login_logo' );
 
 function stile_admin_styles() 
 	{
 	  echo '<style>
-	    .acf-field.acf-accordion .acf-label.acf-accordion-title { background: #efefef; }
-	    .acf-field.acf-field-group { background: #efefef; }
-	    .gcom-stile-module-screenshot {
-	    	border: 5px dashed #efefef;
+		.acf-field.acf-accordion .acf-label.acf-accordion-title { background: #efefef; }
+		.acf-field.acf-field-group { background: #efefef; }
+		.gcom-stile-module-screenshot {
+			border: 5px dashed #efefef;
 			margin-bottom: 10px;
 			padding: 10px;
-	    }
+		}
 
 	  </style>';
 	}
