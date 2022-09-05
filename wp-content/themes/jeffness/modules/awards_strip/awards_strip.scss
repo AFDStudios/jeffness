@@ -54,20 +54,19 @@
 			}
 		}
 		.gcom-award-single-wrapper {
+			flex: 1;
 			display: flex;
 			flex-direction: column;
 			flex-wrap: nowrap;
 			justify-content: center;
 			align-items: center;
 			text-align: center;
-			transform: scale(1);
 			transition: all 0.2s ease-in;
 			@media #{$ipad-and-down} {
 				flex-basis: 40%;
 				margin-bottom: 40px;
 			}
 			&:hover {
-				transform: scale(1.2);
 				transition: all 0.2s ease-out;
 				.gcom-award-text-wrapper {
 					opacity: 1;
